@@ -303,7 +303,7 @@ export default function WestBloomfieldLanding() {
         id: "p-ricky",
         name: "Ricky M",
         role: "Owner",
-        img: "https://i.pravatar.cc/100?img=12",
+        img: "https://storage.googleapis.com/msgsndr/qhBbJtMZvmcd2J1AbrGG/media/691b84eb3f8277d9d7f282a9.png",
         badge: "Owner",
       },
       {
