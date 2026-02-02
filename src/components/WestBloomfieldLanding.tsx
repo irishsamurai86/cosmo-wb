@@ -12,8 +12,10 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
  * - If you add/remove a feature, do it by editing the relevant SECTION only.
  */
 
-const BOOKING_URL =
+const TOUR_BOOKING_URL =
   "https://api.cosmosalonstudios.com/widget/booking/XKQxxfMpeAtAFVuOh84T";
+const CALL_BOOKING_URL =
+  "https://api.cosmosalonstudios.com/widget/booking/rTXPD4SlT0wj9UKBzTHa";
 
 const DESKTOP_BREAKPOINT_PX = 768;
 
@@ -42,7 +44,7 @@ function openBookingPreferC(e?: React.MouseEvent<HTMLElement>) {
 
   // Desktop: open new tab/window. Prevent default navigation so we don't also navigate.
   if (e?.preventDefault) e.preventDefault();
-  window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
+  window.open(TOUR_BOOKING_URL, "_blank", "noopener,noreferrer");
 }
 
 type StorySlide = {
@@ -212,7 +214,7 @@ export default function WestBloomfieldLanding() {
           {
             img: "https://cosmosalonstudios.com/wp-content/uploads/2024/04/Gallery-2-d3.jpg",
             caption: "Book a tour before they’re gone.",
-            cta: { label: "Book a Tour", href: BOOKING_URL },
+            cta: { label: "Book a Tour", href: TOUR_BOOKING_URL },
           },
         ],
       },
@@ -254,7 +256,7 @@ export default function WestBloomfieldLanding() {
           {
             img: "https://cosmosalonstudios.com/wp-content/uploads/2024/04/Gallery-2-d2.jpg",
             caption: "Claim the luxury design package.",
-            cta: { label: "Claim Offer", href: BOOKING_URL },
+            cta: { label: "Claim Offer", href: TOUR_BOOKING_URL },
           },
         ],
       },
@@ -275,7 +277,7 @@ export default function WestBloomfieldLanding() {
           {
             img: "https://cosmosalonstudios.com/wp-content/uploads/2024/04/Gallery-2-d3.jpg",
             caption: "Talk through terms in 15 minutes.",
-            cta: { label: "Schedule Call", href: BOOKING_URL },
+            cta: { label: "Schedule Call", href: CALL_BOOKING_URL },
           },
         ],
       },
@@ -388,16 +390,14 @@ export default function WestBloomfieldLanding() {
         ),
         primaryCta: {
           label: "Book Strategy Call",
-          href: BOOKING_URL,
+          href: CALL_BOOKING_URL,
           variant: "green",
-          isTour: true,
         },
         firstComment: {
           name: "Cosmo Leasing",
           text: "We’ll tailor pricing + suite options to your service mix.",
           ctaText: "Book a call.",
-          ctaHref: BOOKING_URL,
-          isTour: true,
+          ctaHref: CALL_BOOKING_URL,
         },
       },
       {
@@ -423,7 +423,7 @@ export default function WestBloomfieldLanding() {
         ),
         primaryCta: {
           label: "Book a Private Tour",
-          href: BOOKING_URL,
+          href: TOUR_BOOKING_URL,
           variant: "gradient",
           isTour: true,
         },
@@ -431,7 +431,7 @@ export default function WestBloomfieldLanding() {
           name: "Cosmo Leasing",
           text: "WB is elite — tours are the fastest path to a suite.",
           ctaText: "Book now.",
-          ctaHref: BOOKING_URL,
+          ctaHref: TOUR_BOOKING_URL,
           isTour: true,
         },
       },
@@ -452,16 +452,14 @@ export default function WestBloomfieldLanding() {
         ),
         primaryCta: {
           label: "Schedule a 15-Min Call",
-          href: BOOKING_URL,
+          href: CALL_BOOKING_URL,
           variant: "black",
-          isTour: true,
         },
         firstComment: {
           name: "Ricky M",
           text: "If you’re booked out, you’re ready for a suite.",
           ctaText: "Let’s run it.",
-          ctaHref: BOOKING_URL,
-          isTour: true,
+          ctaHref: CALL_BOOKING_URL,
         },
       },
       {
@@ -624,7 +622,7 @@ export default function WestBloomfieldLanding() {
     <div className="mt-8 w-full max-w-md mx-auto grid grid-cols-2 gap-4">
       <div className="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 text-center">
         <p className="text-2xl font-semibold">376+</p>
-        <p className="text-xs text-neutral-500 mt-1">Beauty Pros Trust Us</p>
+        <p className="text-xs text-neutral-500 mt-1">Trusted by Pros</p>
       </div>
       <div className="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 text-center">
         <p className="text-2xl font-semibold">4.9 ★</p>
@@ -905,7 +903,7 @@ export default function WestBloomfieldLanding() {
       </div>
 
       <a
-        href={BOOKING_URL}
+        href={TOUR_BOOKING_URL}
         onClick={(e) => openBookingPreferC(e)}
         className="block w-full max-w-xs mx-auto bg-white text-black text-sm font-semibold px-7 py-3 rounded-md shadow-sm hover:bg-neutral-100 active:scale-[0.98] transition"
       >
@@ -970,7 +968,7 @@ export default function WestBloomfieldLanding() {
 
           <div className="p-4 border-t bg-white">
             <a
-              href={BOOKING_URL}
+              href={TOUR_BOOKING_URL}
               onClick={(e) => openBookingPreferC(e)}
               className="block w-full text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold px-5 py-3 rounded-full shadow-sm"
             >
@@ -986,7 +984,7 @@ export default function WestBloomfieldLanding() {
     const slide = activeStory.slides[storySlideIndex];
     const progressPct = ((storySlideIndex + 1) / activeStory.slides.length) * 100;
 
-    const isTourStoryCta = !!slide.cta && slide.cta.href === BOOKING_URL;
+    const isTourStoryCta = !!slide.cta && slide.cta.href === TOUR_BOOKING_URL;
 
     return (
       <div className="fixed inset-0 bg-black z-[80] flex items-center justify-center">
