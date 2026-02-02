@@ -624,7 +624,7 @@ export default function WestBloomfieldLanding() {
     <div className="mt-8 w-full max-w-md mx-auto grid grid-cols-2 gap-4">
       <div className="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 text-center">
         <p className="text-2xl font-semibold">376+</p>
-        <p className="text-xs text-neutral-500 mt-1">Beauty Pros Trust Us</p>
+        <p className="text-xs text-neutral-500 mt-1">Trusted by Pros</p>
       </div>
       <div className="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 text-center">
         <p className="text-2xl font-semibold">4.9 ★</p>
